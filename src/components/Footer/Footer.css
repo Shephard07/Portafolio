@@ -1,0 +1,119 @@
+/* ==========================================
+   FOOTER PRINCIPAL
+   ========================================== */
+.footer {
+  background: #080c14;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #8b95a1;
+  padding: 3rem 5% 0;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* ==========================================
+   MARCA / LOGO
+   ========================================== */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.text-cyan {
+  color: #00d8ff;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: #8b95a1;
+  max-width: 220px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================
+   NAVEGACIÓN
+   ========================================== */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-nav a {
+  color: #8b95a1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #ffffff;
+}
+
+/* ==========================================
+   REDES SOCIALES
+   ========================================== */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-social a {
+  color: #8b95a1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #00d8ff;
+}
+
+/* ==========================================
+   LÍNEA DE COPYRIGHT
+   ========================================== */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-tagline {
+    max-width: 100%;
+  }
+
+  .footer-nav,
+  .footer-social {
+    align-items: center;
+  }
+}
