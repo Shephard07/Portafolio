@@ -11,10 +11,9 @@ export default function Certificados() {
     >
       <div className="page-width certificates-layout">
         <div className="certificates-heading">
-          <span className="section-kicker">03 / FORMACIÓN</span>
+          <span className="section-kicker">04 / FORMACIÓN</span>
           <h2 id="certificates-title">
-            Siempre hay{" "}
-            <br />
+            Siempre hay <br />
             algo que aprender<span className="green-text">.</span>
           </h2>
           <p className="section-intro">

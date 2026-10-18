@@ -1,0 +1,225 @@
+.profile-section {
+  background: #ecf0e5;
+  border-block: 1px solid #dfe5d7;
+}
+.profile-heading {
+  margin-bottom: 34px;
+}
+.profile-heading .section-intro {
+  max-width: 620px;
+}
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 25px;
+  align-items: stretch;
+}
+.profile-card {
+  background: #f8faf4;
+  border: 1px solid #d7e0ce;
+  border-radius: 11px;
+  padding: 31px;
+  min-width: 0;
+}
+.profile-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.profile-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: #e5edd9;
+  border: 1px solid #d1dfc1;
+  color: var(--green);
+  border-radius: 9px;
+}
+.profile-card h3 {
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -0.6px;
+}
+.profile-paragraphs p,
+.profile-experience p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.profile-paragraphs p + p {
+  margin-top: 16px;
+}
+.profile-experience {
+  margin-top: 27px;
+  padding: 23px 24px;
+  background: #edf2e5;
+  border-left: 3px solid #7a9d61;
+  border-radius: 0 7px 7px 0;
+}
+.profile-small-label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+  color: var(--green);
+}
+.profile-card h4 {
+  font-family: var(--heading);
+  color: #213d2b;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+  font-weight: 650;
+  margin: 12px 0 7px;
+}
+.profile-stage {
+  font-size: 11px;
+  color: #43573d;
+  display: block;
+}
+.profile-experience p {
+  margin-top: 14px;
+  font-size: 13px;
+}
+.profile-education {
+  display: flex;
+  flex-direction: column;
+}
+.profile-study {
+  border-left: 2px solid #9ab77f;
+  padding: 3px 0 3px 19px;
+}
+.profile-study-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.profile-study-meta > span:first-child {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--green);
+}
+.profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #c9d7bd;
+  border-radius: 20px;
+  padding: 3px 10px;
+  color: #405737;
+  font-size: 10px;
+}
+.profile-status .status-dot {
+  width: 5px;
+  height: 5px;
+}
+.profile-study h4 {
+  margin-top: 14px;
+  font-size: 21px;
+  line-height: 1.5;
+}
+.profile-study > p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.profile-knowledge {
+  border-top: 1px solid #dce4d3;
+  margin-top: 28px;
+  padding-top: 23px;
+}
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.profile-tags span {
+  border: 1px solid #d4dfc8;
+  background: #edf2e5;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 11px;
+  color: #304b38;
+}
+.profile-learning {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: var(--green);
+  margin-top: 27px;
+}
+.profile-learning p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+.profile-project-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 650;
+  margin-top: auto;
+  padding-top: 29px;
+}
+.profile-project-link:hover {
+  color: #142b1c;
+}
+@media (max-width: 1000px) {
+  .profile-card {
+    padding: 25px;
+  }
+  .profile-grid {
+    gap: 20px;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .profile-experience {
+    padding: 20px;
+  }
+}
+@media (max-width: 850px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-card {
+    padding: 29px;
+  }
+}
+@media (max-width: 600px) {
+  .profile-card {
+    padding: 23px;
+  }
+  .profile-card h3 {
+    font-size: 20px;
+  }
+  .profile-card h4 {
+    font-size: 15px;
+  }
+  .profile-study h4 {
+    font-size: 21px;
+  }
+  .profile-paragraphs p {
+    font-size: 14px;
+  }
+  .profile-experience {
+    padding: 19px 17px;
+  }
+  .profile-small-label {
+    font-size: 8px;
+    letter-spacing: 1.1px;
+  }
+  .profile-study-meta {
+    gap: 14px;
+  }
+}

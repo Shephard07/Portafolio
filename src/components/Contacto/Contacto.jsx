@@ -28,7 +28,7 @@ export default function Contacto() {
     >
       <div className="page-width contact-layout">
         <div className="contact-copy">
-          <span className="section-kicker">04 / CONTACTO</span>
+          <span className="section-kicker">05 / CONTACTO</span>
           <h2 id="contact-title">
             Las buenas ideas
             <br />

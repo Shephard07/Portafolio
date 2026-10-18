@@ -1,5 +1,22 @@
 export default function Icon({ name = "arrow", size = 20, ...props }) {
   const paths = {
+    user: (
+      <>
+        <circle cx="12" cy="7" r="4" />
+        <path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2" />
+      </>
+    ),
+    education: (
+      <>
+        <path d="m2 9 10-5 10 5-10 5L2 9Zm4 2v6c3 3 9 3 12 0v-6M22 9v7" />
+      </>
+    ),
+    briefcase: (
+      <>
+        <rect x="3" y="7" width="18" height="14" rx="2" />
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12a20 20 0 0 0 18 0M12 11v4" />
+      </>
+    ),
     arrow: <path d="M5 12h14M12 5l7 7-7 7" />,
     external: <path d="M7 17 17 7M7 7h10v10" />,
     code: <path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18" />,

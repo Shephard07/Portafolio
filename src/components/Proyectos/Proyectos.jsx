@@ -57,7 +57,7 @@ export default function Proyectos() {
     >
       <div className="section-heading">
         <div>
-          <span className="section-kicker">02 / PROYECTOS</span>
+          <span className="section-kicker">03 / PROYECTOS</span>
           <h2 id="projects-title">
             Ideas en práctica<span className="green-text">.</span>
           </h2>
@@ -94,7 +94,9 @@ export default function Proyectos() {
                 <span>{project.pendiente ? "Por completar" : project.id}</span>
               </div>
               <h3>{project.titulo}</h3>
-              {project.subtitulo && <p className="project-subtitle">{project.subtitulo}</p>}
+              {project.subtitulo && (
+                <p className="project-subtitle">{project.subtitulo}</p>
+              )}
               <p>{project.descripcion}</p>
               {project.tecnologias.length > 0 && (
                 <div className="tech-tags">

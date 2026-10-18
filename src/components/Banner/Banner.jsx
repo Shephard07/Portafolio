@@ -82,40 +82,6 @@ export default function Banner() {
           </a>
         </div>
       </section>
-      <section
-        id="sobre-mi"
-        className="about-section"
-        aria-labelledby="about-title"
-      >
-        <div className="about-layout page-width">
-          <div>
-            <span className="section-kicker">01 / SOBRE MÍ</span>
-            <h2 id="about-title">
-              Detrás de{" "}
-              <br />
-              cada línea.
-            </h2>
-          </div>
-          <div className="about-copy">
-            <p>
-              Me gusta entender cómo funcionan las cosas y aprender
-              construyéndolas.
-            </p>
-            <p>
-              Mi interés está en el desarrollo de software y la inteligencia
-              artificial: transformar una idea en algo que se pueda usar, probar
-              y mejorar.
-            </p>
-            <div className="interest-list">
-              <span>
-                <Icon name="code" size={18} /> Desarrollo de software
-              </span>
-              <span>✳ Inteligencia artificial</span>
-              <span>↗ Aprendizaje continuo</span>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

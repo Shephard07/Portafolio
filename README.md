@@ -19,6 +19,9 @@ Si ya tienes `node_modules` en tu proyecto, puedes copiar `src`, `public` e `ind
 
 Los datos están en **`src/data/portfolio.js`**:
 
+- `trayectoria`: perfil en formación, estudios, prácticas y tecnologías en aprendizaje.
+- `habilidades`: seis tecnologías o grupos de herramientas, con descripción y estado «En aprendizaje».
+
 - `perfil`: nombre, presentación, correo, GitHub, ubicación y LinkedIn.
 - `proyectos`: título, categoría, descripción, tecnologías, enlaces y captura opcional.
 - `certificados`: nombre, institución, fecha y enlace al PDF. Los seis PDF originales están incluidos en `public/certificados`.
@@ -49,7 +52,7 @@ Ejemplo de certificado:
 { id: 1, titulo: 'Nombre real del curso', emisor: 'Institución', fecha: '2026', credencial: 'https://enlace-de-verificacion' }
 ```
 
-La foto está en `src/assets/foto.jpg`. Puedes reemplazarla conservando ese nombre. Los textos adicionales de portada y presentación están en `src/components/Banner/Banner.jsx`.
+La foto está en `src/assets/foto.jpg`. Puedes reemplazarla conservando ese nombre. La portada está en `src/components/Banner/Banner.jsx` y la sección Perfil tiene su carpeta `src/components/Perfil`, con `Perfil.jsx` y `Perfil.css`.
 
 ## Formulario
 
@@ -58,7 +61,9 @@ El botón **Preparar correo** abre la aplicación de correo del visitante con el
 ## Estructura
 
 - `Navbar`: marca, enlaces y menú móvil accesible.
-- `Banner`: portada, retrato y presentación personal.
+- `Banner`: portada y retrato.
+- `Perfil`: perfil profesional, prácticas en AUTOMATION DEVELOPER SYSTEM SAC y formación en SENATI (5.º semestre).
+- `Habilidades`: seis tarjetas generadas con `.map()`, ubicadas entre Perfil y Proyectos.
 - `Proyectos`: tarjetas con ilustración o captura y enlaces opcionales.
 - `Certificados`: tarjetas con el nombre del curso y la fecha; cada tarjeta abre su PDF en una pestaña nueva.
 - `Contacto`: datos de contacto y formulario.

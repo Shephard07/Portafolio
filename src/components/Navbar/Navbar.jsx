@@ -33,7 +33,10 @@ export default function Navbar() {
         </button>
         <div id="main-menu" className={`nav-links ${isOpen ? "is-open" : ""}`}>
           <a href="#sobre-mi" onClick={close}>
-            Sobre mí
+            Perfil
+          </a>
+          <a href="#tech-stack" onClick={close}>
+            Habilidades
           </a>
           <a href="#proyectos" onClick={close}>
             Proyectos
