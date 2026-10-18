@@ -1,24 +1,25 @@
-import Navbar from './components/Navbar/Navbar';
-import Banner from './components/Banner/Banner';
-import Proyectos from './components/Proyectos/Proyectos';
-import Certificados from './components/Certificados/Certificados';
-import Contacto from './components/Contacto/Contacto';
-import Footer from './components/Footer/Footer';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import './index.css';
-
-function App() {
+import Navbar from "./components/Navbar/Navbar";
+import Banner from "./components/Banner/Banner";
+import Proyectos from "./components/Proyectos/Proyectos";
+import Certificados from "./components/Certificados/Certificados";
+import Contacto from "./components/Contacto/Contacto";
+import Footer from "./components/Footer/Footer";
+import "./index.css";
+import "./App.css";
+export default function App() {
   return (
     <>
+      <a className="skip-link" href="#contenido">
+        Saltar al contenido
+      </a>
       <Navbar />
-      <Banner />
-      <Proyectos />
-      <Certificados />
-      <Contacto />
+      <main id="contenido">
+        <Banner />
+        <Proyectos />
+        <Certificados />
+        <Contacto />
+      </main>
       <Footer />
     </>
   );
 }
-
-export default App;

@@ -1,162 +1,132 @@
-import { useState } from 'react';
-import './Contacto.css';
-
-const Contacto = () => {
+import { useState } from "react";
+import { perfil } from "../../data/portfolio";
+import Icon from "../Icon";
+import "./Contacto.css";
+export default function Contacto() {
   const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    asunto: '',
-    mensaje: '',
+    nombre: "",
+    email: "",
+    asunto: "",
+    mensaje: "",
   });
-
-  const [enviado, setEnviado] = useState(false);
-
-  const handleChange = (e) => {
+  const [preparado, setPreparado] = useState(false);
+  function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+    setPreparado(false);
+  }
+  function handleSubmit(e) {
     e.preventDefault();
-    /* Completar información: aquí puedes integrar EmailJS, Formspree, o tu propio backend */
-    console.log('Formulario enviado:', formData);
-    setEnviado(true);
-    setFormData({ nombre: '', email: '', asunto: '', mensaje: '' });
-    setTimeout(() => setEnviado(false), 4000);
-  };
-
+    const body = `Hola Bryan,\n\n${formData.mensaje}\n\n${formData.nombre}\nCorreo de contacto: ${formData.email}`;
+    window.location.href = `mailto:${perfil.email}?subject=${encodeURIComponent(formData.asunto)}&body=${encodeURIComponent(body)}`;
+    setPreparado(true);
+  }
   return (
-    <section id="contacto" className="contacto-section">
-      <div className="contacto-container">
-
-        {/* Encabezado de sección */}
-        <div className="contacto-header">
-          <span className="section-tag-contacto">Hablemos</span>
-          <h2 className="contacto-title">
-            Ponte en <span className="text-cyan">Contacto</span>
+    <section
+      id="contacto"
+      className="contact-section section-space"
+      aria-labelledby="contact-title"
+    >
+      <div className="page-width contact-layout">
+        <div className="contact-copy">
+          <span className="section-kicker">04 / CONTACTO</span>
+          <h2 id="contact-title">
+            Las buenas ideas
+            <br />
+            empiezan con
+            <br />
+            <span>una conversación.</span>
           </h2>
-          <p className="contacto-subtitle">
-            Completar información — ¿Tienes un proyecto en mente? Escríbeme y hablemos.
+          <p>
+            ¿Quieres hablar de un proyecto, compartir una idea o simplemente
+            saludar? Me encantará leerte.
           </p>
+          <a className="email-link" href={`mailto:${perfil.email}`}>
+            {perfil.email} <Icon name="external" size={21} />
+          </a>
+          <div className="contact-socials">
+            <a href={perfil.github} target="_blank" rel="noreferrer">
+              <Icon name="github" size={18} /> GitHub{" "}
+              <Icon name="external" size={15} />
+            </a>
+            {perfil.linkedin && (
+              <a href={perfil.linkedin} target="_blank" rel="noreferrer">
+                <Icon name="linkedin" size={18} /> LinkedIn{" "}
+                <Icon name="external" size={15} />
+              </a>
+            )}
+            <span>
+              <Icon name="location" size={17} /> {perfil.ubicacion}
+            </span>
+          </div>
         </div>
-
-        <div className="contacto-grid">
-
-          {/* Información de contacto */}
-          <div className="contacto-info">
-            <h3 className="info-titulo">Información de Contacto</h3>
-
-            <div className="info-item">
-              <span className="info-icono">📧</span>
-              <div>
-                <span className="info-label">Email</span>
-                <a href="mailto:cotrina.bryaneloyt@gmail.com" className="info-valor">
-                  cotrina.bryaneloyt@gmail.com
-                </a>
-              </div>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <span className="form-caption">
+            CUÉNTAME TU IDEA <Icon name="mail" size={21} />
+          </span>
+          <div className="form-pair">
+            <div className="field">
+              <label htmlFor="nombre">Tu nombre</label>
+              <input
+                id="nombre"
+                name="nombre"
+                autoComplete="name"
+                placeholder="¿Cómo te llamas?"
+                value={formData.nombre}
+                onChange={handleChange}
+                maxLength={120}
+                required
+              />
             </div>
-
-            <div className="info-item">
-              <span className="info-icono">💼</span>
-              <div>
-                <span className="info-label">LinkedIn</span>
-                <a href="#" className="info-valor" target="_blank" rel="noopener noreferrer">
-                  Completar información
-                </a>
-              </div>
-            </div>
-
-            <div className="info-item">
-              <span className="info-icono">🐙</span>
-              <div>
-                <span className="info-label">GitHub</span>
-                <a href="https://github.com/Shephard07" className="info-valor" target="_blank" rel="noopener noreferrer">
-                  github.com/Shephard07
-                </a>
-              </div>
-            </div>
-
-            <div className="info-item">
-              <span className="info-icono">📍</span>
-              <div>
-                <span className="info-label">Ubicación</span>
-                <span className="info-valor">Perú, Lima</span>
-              </div>
+            <div className="field">
+              <label htmlFor="email">Tu correo</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                placeholder="nombre@correo.com"
+                value={formData.email}
+                onChange={handleChange}
+                maxLength={200}
+                required
+              />
             </div>
           </div>
-
-          {/* Formulario de contacto */}
-          <form className="contacto-form" onSubmit={handleSubmit}>
-
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="nombre">Nombre</label>
-                <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  placeholder="Tu nombre"
-                  value={formData.nombre}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="tu@correo.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="asunto">Asunto</label>
-              <input
-                type="text"
-                id="asunto"
-                name="asunto"
-                placeholder="¿En qué te puedo ayudar?"
-                value={formData.asunto}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="mensaje">Mensaje</label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                placeholder="Cuéntame más sobre tu proyecto..."
-                rows="5"
-                value={formData.mensaje}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <button type="submit" className="btn-enviar">
-              {enviado ? '✅ ¡Mensaje enviado!' : '🚀 Enviar Mensaje'}
-            </button>
-
-            {enviado && (
-              <p className="msg-exito">
-                ¡Gracias por escribirme! Te responderé pronto.
-              </p>
-            )}
-
-          </form>
-        </div>
-
+          <div className="field">
+            <label htmlFor="asunto">Asunto</label>
+            <input
+              id="asunto"
+              name="asunto"
+              placeholder="¿De qué hablamos?"
+              value={formData.asunto}
+              onChange={handleChange}
+              maxLength={150}
+              required
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="mensaje">Tu mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              placeholder="Todo empieza con una idea..."
+              value={formData.mensaje}
+              onChange={handleChange}
+              maxLength={3000}
+              required
+            />
+          </div>
+          <button className="button button-green" type="submit">
+            Preparar correo <Icon name="external" />
+          </button>
+          <p className="form-help" role="status">
+            {preparado
+              ? "Tu correo está preparado. Revisa y envía el mensaje desde tu aplicación de correo. Si no se abrió, usa el enlace de email."
+              : "Se abrirá tu aplicación de correo para que revises y envíes el mensaje."}
+          </p>
+        </form>
       </div>
     </section>
   );
-};
-
-export default Contacto;
+}

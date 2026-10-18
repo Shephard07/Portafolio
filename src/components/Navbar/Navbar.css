@@ -1,95 +1,136 @@
-/* ==========================================
-   ESTILOS GENERALES DEL NAVBAR
-   ========================================== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 5%;
-  background-color: #0b0f19; /* Fondo oscuro elegante */
-  color: #ffffff;
+.site-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  background: #f7f8f2f5;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
 }
-
-/* ==========================================
-   ESTILOS DEL LOGO
-   ========================================== */
-.navbar-logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  cursor: pointer;
-  letter-spacing: 1px;
-}
-
-.text-cyan {
-  color: #00d8ff; /* Color de acento (Cyan) */
-}
-
-/* ==========================================
-   ESTILOS DE LOS ENLACES (DESKTOP)
-   ========================================== */
-.navbar-links {
+.site-nav {
+  height: 96px;
   display: flex;
-  gap: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
 }
-
-.navbar-links a {
-  color: #a0aab2;
-  text-decoration: none;
-  font-size: 1rem;
+.brand {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  font-family: var(--heading);
+  font-weight: 750;
+  font-size: 15px;
+  line-height: 1.35;
+}
+.brand-symbol {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 42px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  font-size: 30px;
+  letter-spacing: -5px;
+  padding-right: 6px;
+  position: relative;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+}
+.brand-symbol span {
+  color: var(--green);
+}
+.brand-caption {
+  display: block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: 2.4px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  font-size: 13px;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
-
-.navbar-links a:hover {
-  color: #ffffff;
+.nav-links a {
+  transition: color 0.2s;
 }
-
-/* ==========================================
-   BOTÓN HAMBURGUESA (Oculto en PC)
-   ========================================== */
-.navbar-toggle {
+.nav-links a:hover {
+  color: var(--green);
+}
+.nav-contact {
+  border: 1px solid #b9c3b5;
+  border-radius: 5px;
+  padding: 9px 17px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.nav-contact span {
+  font-size: 20px;
+  line-height: 1;
+}
+.menu-toggle {
   display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 6px;
 }
-
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* ==========================================
-   MEDIA QUERY: VERSIÓN MÓVIL Y TABLET
-   ========================================== */
-@media (max-width: 768px) {
-  .navbar-toggle {
-    display: flex; /* Mostramos el botón hamburguesa */
+@media (max-width: 720px) {
+  .site-nav {
+    height: 78px;
   }
-
-  .navbar-links {
-    display: none; /* Ocultamos los enlaces horizontales */
+  .menu-toggle {
+    display: flex;
     flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    width: 44px;
+    height: 44px;
+  }
+  .menu-toggle span {
+    width: 19px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: transform 0.2s;
+  }
+  .menu-toggle.is-open span:first-child {
+    transform: translateY(3.75px) rotate(45deg);
+  }
+  .menu-toggle.is-open span:last-child {
+    transform: translateY(-3.75px) rotate(-45deg);
+  }
+  .nav-links {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
-    background-color: #0b0f19;
-    padding: 2rem 0;
-    text-align: center;
-    gap: 2rem;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    right: 0;
+    padding: 18px 24px 26px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 20px #222c2808;
+    align-items: stretch;
+    gap: 0;
   }
-
-  /* Cuando el estado isOpen es true, se añade la clase "open" */
-  .navbar-links.open {
+  .nav-links.is-open {
     display: flex;
+    flex-direction: column;
+  }
+  .nav-links a {
+    padding: 13px 8px;
+  }
+  .nav-links .nav-contact {
+    margin-top: 8px;
+    justify-content: space-between;
+    padding-inline: 14px;
+  }
+  .brand {
+    font-size: 14px;
   }
 }

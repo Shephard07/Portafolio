@@ -1,55 +1,121 @@
-import './Banner.css';
-import miFoto from '../../assets/foto.jpg';
-
-const Banner = () => {
+import miFoto from "../../assets/foto.jpg";
+import { perfil } from "../../data/portfolio";
+import Icon from "../Icon";
+import "./Banner.css";
+export default function Banner() {
   return (
-    <section id="sobre-mi" className="hero-section">
-      <div className="hero-content">
-
-        {/* 1. Etiqueta de Estado (Badge) */}
-        <div className="status-badge">
-          <span className="status-dot"></span>
-          Disponible para nuevos proyectos
+    <>
+      <section
+        id="inicio"
+        className="hero page-width"
+        aria-labelledby="hero-title"
+      >
+        <div className="hero-copy">
+          <div className="eyebrow">
+            <span className="status-dot" /> PORTAFOLIO PERSONAL
+          </div>
+          <h1 id="hero-title">
+            Hola, soy Bryan<span className="hero-period">.</span>
+            <br />
+            <span className="hero-outline">Convierto ideas</span>
+            <br />
+            en código<span className="hero-period">.</span>
+          </h1>
+          <p className="hero-role">{perfil.rol}</p>
+          <p className="hero-description">{perfil.descripcion}</p>
+          <div className="hero-actions">
+            <a className="button button-dark" href="#proyectos">
+              Explorar proyectos <Icon />
+            </a>
+            <a className="text-link" href="#contacto">
+              Conversemos <Icon name="external" size={18} />
+            </a>
+          </div>
+          <div className="hero-location">
+            <Icon name="location" size={16} /> {perfil.ubicacion}
+            <span>·</span>
+            <a href={perfil.github} target="_blank" rel="noreferrer">
+              GitHub <Icon name="external" size={15} />
+            </a>
+          </div>
         </div>
-
-        {/* 2. Foto de Perfil Circular */}
-        <div className="profile-photo-container">
-          <img
-            src={miFoto}
-            alt="Foto de Perfil"
-            className="profile-photo"
-          />
+        <div className="hero-visual">
+          <div className="portrait-frame">
+            <span className="portrait-corner" aria-hidden="true">
+              ↗
+            </span>
+            <div className="portrait-grid" aria-hidden="true" />
+            <img
+              src={miFoto}
+              alt="Retrato de Bryan Eloy Cotrina Ortiz"
+              className="portrait"
+              fetchPriority="high"
+            />
+            <div className="portrait-caption">
+              <span>
+                {perfil.nombre}
+                <br />
+                <strong>{perfil.apellidos}</strong>
+              </span>
+              <span className="portrait-index">BC / 01</span>
+            </div>
+          </div>
+          <div className="code-note">
+            <span className="code-note-icon">
+              <Icon name="code" size={22} />
+            </span>
+            <span>
+              Una idea. Una línea.
+              <br />
+              <strong>Algo nuevo por construir.</strong>
+            </span>
+            <span className="note-dot" />
+          </div>
+          <span className="visual-annotation">
+            CURIOSIDAD → CÓDIGO → SOLUCIONES
+          </span>
         </div>
-
-        <h1 className="hero-title">
-          Bryan Eloy <br />
-          <span className="text-cyan">Cotrina Ortiz</span>
-        </h1>
-
-        {/* 4. Subtítulo (Rol) */}
-        <h2 className="hero-subtitle">
-          Ingeniero de Software con IA
-        </h2>
-
-        {/* 5. Descripción */}
-        <p className="hero-description">
-          Apasionado por el desarrollo de software e inteligencia artificial. Construyo soluciones tecnológicas que combinan código limpio con modelos inteligentes para resolver problemas del mundo real.
-        </p>
-
-        {/* 6. Botones de Acción */}
-        <div className="hero-buttons">
-          <a href="#proyectos" className="btn btn-primary">Ver Proyectos</a>
-          <a href="#contacto" className="btn btn-secondary">Contáctame</a>
+        <div className="hero-bottom">
+          <span>APRENDER. CREAR. MEJORAR.</span>
+          <a href="#sobre-mi">
+            Conoce un poco más <span aria-hidden="true">↓</span>
+          </a>
         </div>
-
-      </div>
-
-      {/* 7. Indicador de Scroll (Flecha animada hacia abajo) */}
-      <div className="scroll-indicator">
-        ↓
-      </div>
-    </section>
+      </section>
+      <section
+        id="sobre-mi"
+        className="about-section"
+        aria-labelledby="about-title"
+      >
+        <div className="about-layout page-width">
+          <div>
+            <span className="section-kicker">01 / SOBRE MÍ</span>
+            <h2 id="about-title">
+              Detrás de{" "}
+              <br />
+              cada línea.
+            </h2>
+          </div>
+          <div className="about-copy">
+            <p>
+              Me gusta entender cómo funcionan las cosas y aprender
+              construyéndolas.
+            </p>
+            <p>
+              Mi interés está en el desarrollo de software y la inteligencia
+              artificial: transformar una idea en algo que se pueda usar, probar
+              y mejorar.
+            </p>
+            <div className="interest-list">
+              <span>
+                <Icon name="code" size={18} /> Desarrollo de software
+              </span>
+              <span>✳ Inteligencia artificial</span>
+              <span>↗ Aprendizaje continuo</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
-};
-
-export default Banner;
+}

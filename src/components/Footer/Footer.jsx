@@ -1,49 +1,23 @@
-import './Footer.css';
-
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
+import { perfil } from "../../data/portfolio";
+import "./Footer.css";
+export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-
-        {/* Marca / Logo */}
-        <div className="footer-brand">
-          <span className="footer-logo">
-            <span className="text-cyan">Bryan</span> Cotrina
-          </span>
-          <p className="footer-tagline">Ingeniero de Software con IA.</p>
-        </div>
-
-        {/* Navegación rápida */}
-        <nav className="footer-nav">
-          <a href="#sobre-mi">Perfil</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#certificados">Certificados</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-
-        {/* Redes sociales */}
-        <div className="footer-social">
-          <a href="https://github.com/Shephard07" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            🐙 GitHub
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            💼 LinkedIn
-          </a>
-          <a href="mailto:cotrina.bryaneloyt@gmail.com" aria-label="Email">
-            📧 Email
-          </a>
-        </div>
-
+    <footer className="site-footer">
+      <div className="page-width footer-main">
+        <a className="footer-brand" href="#inicio">
+          Bryan Cotrina<span>.</span>
+        </a>
+        <p>Una idea a la vez. Una línea a la vez.</p>
+        <a className="back-top" href="#inicio">
+          Volver arriba <span aria-hidden="true">↑</span>
+        </a>
       </div>
-
-      {/* Línea divisoria y copyright */}
-      <div className="footer-bottom">
-        <span>© {currentYear} Bryan Eloy Cotrina Ortiz.</span>
+      <div className="page-width footer-bottom">
+        <span>
+          © {new Date().getFullYear()} {perfil.nombre} {perfil.apellidos}
+        </span>
+        <span>Hecho con React y curiosidad.</span>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

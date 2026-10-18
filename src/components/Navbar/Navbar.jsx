@@ -1,34 +1,51 @@
-import { useState } from 'react';
-import './Navbar.css';
-
-const Navbar = () => {
-  // Estado para controlar el menú hamburguesa en móviles[cite: 5]
+import { useState } from "react";
+import "./Navbar.css";
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const close = () => setIsOpen(false);
   return (
-    <nav className="navbar">
-      {/* Sección del Logo */}
-      <div className="navbar-logo">
-        <span className="text-cyan">Bryan</span> Cotrina
-      </div>
-
-      {/* Enlaces de Navegación */}
-      <div className={`navbar-links ${isOpen ? "open" : ""}`}>
-        {/* Al hacer clic en un enlace en móvil, cerramos el menú */}
-        <a href="#sobre-mi" onClick={() => setIsOpen(false)}>Perfil</a>
-        <a href="#proyectos" onClick={() => setIsOpen(false)}>Proyectos</a>
-        <a href="#certificados" onClick={() => setIsOpen(false)}>Certificados</a>
-        <a href="#contacto" onClick={() => setIsOpen(false)}>Contacto</a>
-      </div>
-
-      {/* Ícono de Menú Hamburguesa (Solo visible en móviles) */}
-      <div className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </div>
-    </nav>
+    <header className="site-header">
+      <nav
+        className="site-nav page-width"
+        aria-label="Navegación principal"
+        onKeyDown={(e) => {
+          if (e.key === "Escape") close();
+        }}
+      >
+        <a className="brand" href="#inicio" onClick={close}>
+          <span className="brand-symbol">
+            b<span>.</span>
+          </span>
+          <span>
+            Bryan Cotrina<span className="brand-caption">SOFTWARE & IA</span>
+          </span>
+        </a>
+        <button
+          type="button"
+          className={`menu-toggle ${isOpen ? "is-open" : ""}`}
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isOpen}
+          aria-controls="main-menu"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span />
+          <span />
+        </button>
+        <div id="main-menu" className={`nav-links ${isOpen ? "is-open" : ""}`}>
+          <a href="#sobre-mi" onClick={close}>
+            Sobre mí
+          </a>
+          <a href="#proyectos" onClick={close}>
+            Proyectos
+          </a>
+          <a href="#certificados" onClick={close}>
+            Certificados
+          </a>
+          <a className="nav-contact" href="#contacto" onClick={close}>
+            Hablemos <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}
