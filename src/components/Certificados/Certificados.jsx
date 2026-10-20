@@ -21,7 +21,7 @@ export default function Certificados() {
             certificado para abrir el documento completo.
           </p>
           <span className="learning-note">
-            <span className="status-dot" /> Cisco Networking Academy · SENATI
+            <span className="status-dot" /> Cisco Networking Academy · Oracle Academy | SENATI
           </span>
         </div>
         <div className="certificates-grid">
