@@ -1,7 +1,8 @@
-
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { perfil } from "../../data/portfolio";
+import Icon from "../Icon";
 import "./Contacto.css";
 
 const Contacto = () => {
@@ -88,8 +89,8 @@ const Contacto = () => {
           </h2>
 
           <p className="contacto-intro">
-            Las buenas ideas empiezan con una conversación.
-            Cuéntame sobre tu proyecto y veamos cómo podemos hacerlo realidad.
+            Las buenas ideas empiezan con una conversación. Cuéntame sobre tu
+            proyecto y veamos cómo podemos hacerlo realidad.
           </p>
         </div>
 
@@ -99,34 +100,44 @@ const Contacto = () => {
             <h3 className="info-title">Ponte en contacto</h3>
 
             <p className="info-desc">
-              ¿Tienes un proyecto en mente o necesitas ayuda para
-              automatizar tus flujos de trabajo? Me encantaría escucharte.
+              ¿Tienes un proyecto en mente o necesitas ayuda para automatizar tus
+              flujos de trabajo? Me encantaría escucharte.
             </p>
 
             <div className="info-items">
               <a
                 className="info-item"
-                href="mailto:cotrina.bryaneloyt@gmail.com"
+                href={`mailto:${perfil.email}`}
               >
                 <div className="info-icon" aria-hidden="true">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
+                  <Icon name="mail" size={20} />
                 </div>
 
                 <div className="info-content">
                   <span className="item-label">Correo electrónico</span>
-                  <p className="item-text">cotrina.bryaneloyt@gmail.com</p>
+                  <p className="item-text">{perfil.email}</p>
+                </div>
+
+                <span className="info-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+
+              <a
+                className="info-item"
+                href={perfil.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="info-icon" aria-hidden="true">
+                  <Icon name="linkedin" size={20} />
+                </div>
+
+                <div className="info-content">
+                  <span className="item-label">LinkedIn</span>
+                  <p className="item-text">
+                    {perfil.nombre} {perfil.apellidos}
+                  </p>
                 </div>
 
                 <span className="info-arrow" aria-hidden="true">
@@ -136,24 +147,12 @@ const Contacto = () => {
 
               <div className="info-item">
                 <div className="info-icon" aria-hidden="true">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
+                  <Icon name="location" size={20} />
                 </div>
 
                 <div className="info-content">
                   <span className="item-label">Ubicación</span>
-                  <p className="item-text">Lima - Perú</p>
+                  <p className="item-text">{perfil.ubicacion}</p>
                 </div>
               </div>
             </div>
@@ -166,31 +165,15 @@ const Contacto = () => {
 
           {/* Formulario de contacto */}
           <div className="contacto-form-wrapper">
-            <form
-              onSubmit={manejarEnvio}
-              className="contacto-form"
-            >
+            <form onSubmit={manejarEnvio} className="contacto-form">
               <div className="form-caption">
                 <span>CUÉNTAME TU IDEA</span>
-
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <polyline points="3,7 12,13 21,7" />
-                </svg>
+                <Icon name="mail" size={22} />
               </div>
 
               <div className="form-group">
                 <label htmlFor="nombre">Tu nombre</label>
+
                 <input
                   type="text"
                   id="nombre"
@@ -207,6 +190,7 @@ const Contacto = () => {
 
               <div className="form-group">
                 <label htmlFor="email">Tu correo</label>
+
                 <input
                   type="email"
                   id="email"
@@ -223,6 +207,7 @@ const Contacto = () => {
 
               <div className="form-group">
                 <label htmlFor="mensaje">Tu mensaje</label>
+
                 <textarea
                   id="mensaje"
                   name="mensaje"
@@ -248,20 +233,7 @@ const Contacto = () => {
                 {cargando ? (
                   <span className="submit-spinner" aria-hidden="true" />
                 ) : (
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M7 17 17 7" />
-                    <path d="M7 7h10v10" />
-                  </svg>
+                  <Icon name="external" size={18} />
                 )}
               </button>
 

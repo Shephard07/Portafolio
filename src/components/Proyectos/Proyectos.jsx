@@ -1,6 +1,7 @@
 import { proyectos, perfil } from "../../data/portfolio";
 import Icon from "../Icon";
 import "./Proyectos.css";
+
 function ProjectArtwork({ index }) {
   return (
     <div className={`project-art artwork-${index}`} aria-hidden="true">
@@ -12,17 +13,20 @@ function ProjectArtwork({ index }) {
             <i />
             <span>idea → desarrollo</span>
           </div>
+
           <div className="art-code">
             <span className="code-muted">01</span>{" "}
             <span className="code-green">const</span> idea = {"{"}
             <br />
             <span className="code-muted">02</span> &nbsp; propósito:{" "}
-            <span className="code-orange">'crear'</span>,<br />
+            <span className="code-orange">'crear'</span>,
+            <br />
             <span className="code-muted">03</span> &nbsp; siguientePaso:{" "}
             <span className="code-orange">'construir'</span>
             <br />
             <span className="code-muted">04</span> {"}"};
           </div>
+
           <span className="art-terminal">
             ❯ un proyecto a la vez<span>_</span>
           </span>
@@ -48,6 +52,7 @@ function ProjectArtwork({ index }) {
     </div>
   );
 }
+
 export default function Proyectos() {
   return (
     <section
@@ -58,23 +63,27 @@ export default function Proyectos() {
       <div className="section-heading">
         <div>
           <span className="section-kicker">03 / PROYECTOS</span>
+
           <h2 id="projects-title">
             Ideas en práctica<span className="green-text">.</span>
           </h2>
         </div>
+
         <a
           className="text-link"
           href={perfil.github}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           Mi GitHub <Icon name="external" size={19} />
         </a>
       </div>
+
       <p className="section-intro">
-        Cinco proyectos publicados: sistemas de gestión, APIs y experiencias web
-        que forman parte de mi aprendizaje.
+        Proyectos web, aplicaciones Android y simulaciones con Arduino que
+        forman parte de mi aprendizaje y trabajo en equipo.
       </p>
+
       <div className="projects-grid">
         {proyectos.map((project, i) => (
           <article className="project-card" key={project.id}>
@@ -88,16 +97,23 @@ export default function Proyectos() {
             ) : (
               <ProjectArtwork index={i % 3} />
             )}
+
             <div className="project-body">
               <div className="project-meta">
                 <span>{project.categoria}</span>
-                <span>{project.pendiente ? "Por completar" : project.id}</span>
+                <span>
+                  {project.pendiente ? "Por completar" : project.id}
+                </span>
               </div>
+
               <h3>{project.titulo}</h3>
+
               {project.subtitulo && (
                 <p className="project-subtitle">{project.subtitulo}</p>
               )}
+
               <p>{project.descripcion}</p>
+
               {project.tecnologias.length > 0 && (
                 <div className="tech-tags">
                   {project.tecnologias.map((tech) => (
@@ -105,20 +121,53 @@ export default function Proyectos() {
                   ))}
                 </div>
               )}
+
               <div className="project-links">
+                {project.apk && (
+                  <a href={project.apk} download>
+                    Descargar APK
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 3v12m-5-5 5 5 5-5" />
+                      <path d="M5 16v5h14v-5" />
+                    </svg>
+                  </a>
+                )}
+
                 {project.codigo && (
-                  <a href={project.codigo} target="_blank" rel="noreferrer">
-                    Ver código <Icon name="code" size={17} />
+                  <a
+                    href={project.codigo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Repositorio <Icon name="code" size={17} />
                   </a>
                 )}
+
                 {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noreferrer">
-                    Ver proyecto <Icon name="external" size={17} />
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.textoDemo || "Ver proyecto"}
+                    <Icon name="external" size={17} />
                   </a>
                 )}
-                {!project.codigo && !project.demo && (
+
+                {!project.apk && !project.codigo && !project.demo && (
                   <span className="project-pending">
-                    Detalles próximamente <Icon name="external" size={17} />
+                    Detalles próximamente
+                    <Icon name="external" size={17} />
                   </span>
                 )}
               </div>

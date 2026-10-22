@@ -323,3 +323,17 @@
 }
 
 .project-body .project-subtitle { color: #253f2e; font-weight: 650; font-size: 12px; line-height: 1.6; margin-top: 8px; }
+
+.project-links {
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 8px;
+}
+
+.project-links a {
+  min-height: 44px;
+}
+
+.project-links a svg {
+  flex-shrink: 0;
+}

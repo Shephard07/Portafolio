@@ -164,6 +164,64 @@ export const proyectos = [
     imagen: "",
     pendiente: false,
   },
+    {
+    id: "06",
+    titulo: "AppTareas",
+    categoria: "Aplicación Android",
+    subtitulo: "Organización y seguimiento de tareas",
+    descripcion:
+      "Aplicación para crear y organizar tareas con prioridades, fechas de vencimiento y responsables. Permite buscar, filtrar por estado y consultar estadísticas de avance, guardando la información localmente con SQLite.",
+    tecnologias: ["Android", "Java", "XML", "SQLite"],
+    apk: "/apks/appTareas.apk",
+    codigo: "https://github.com/jeremyylasaca40-a11y/AppTareas",
+    demo: "",
+    imagen: "",
+    pendiente: false,
+  },
+  {
+    id: "07",
+    titulo: "EcoTrack",
+    categoria: "Aplicación Android",
+    subtitulo: "Registro y seguimiento de residuos",
+    descripcion:
+      "Aplicación para registrar recolecciones de residuos por tipo, peso y cliente. Incluye edición de registros, filtros y estadísticas por categoría, con almacenamiento local en SQLite y una práctica de envío de datos a una API de prueba.",
+    tecnologias: ["Android", "Java", "SQLite", "Retrofit"],
+    apk: "/apks/EcoTrack.apk",
+    codigo: "https://github.com/jeremyylasaca40-a11y/EcoTrack2",
+    demo: "",
+    imagen: "",
+    pendiente: false,
+  },
+  {
+    id: "08",
+    titulo: "Estacionamiento inteligente",
+    categoria: "Arduino · Proyecto grupal",
+    subtitulo: "Acceso, iluminación y alertas",
+    descripcion:
+      "Simulación de un estacionamiento que abre una barrera al detectar movimiento, enciende la iluminación cuando hay poca luz y activa una alarma si la temperatura supera los 40 °C. Integra sensores, un servomotor y una pantalla LCD.",
+    tecnologias: ["Arduino Uno", "C++", "Sensores", "Tinkercad"],
+    codigo: "",
+    demo:
+      "https://www.tinkercad.com/things/8UBEnAFoxPx/editel?returnTo=%2Fdashboard&sharecode=n3VLQxC1nXoCJtrQZsWtbifkNBEc-MWr9bZgW4tXLWg",
+    textoDemo: "Ver simulación",
+    imagen: "",
+    pendiente: false,
+  },
+  {
+    id: "09",
+    titulo: "Control de temperatura",
+    categoria: "Arduino · Proyecto grupal",
+    subtitulo: "Monitoreo de una sala de servidores",
+    descripcion:
+      "Simulación que mide la temperatura con un sensor TMP36 y muestra el estado en una pantalla LCD. Utiliza indicadores LED, simula una compuerta de ventilación con un servomotor y activa una alarma cuando la temperatura supera los 32 °C.",
+    tecnologias: ["Arduino Uno", "C++", "TMP36", "Tinkercad"],
+    codigo: "",
+    demo:
+      "https://www.tinkercad.com/things/fKLxgmL0g8E-proyecto-entregable-20/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=887C8vakBjt2y0ptf23Zk8xlwGMRzbpFRGmJhyth2so",
+    textoDemo: "Ver simulación",
+    imagen: "",
+    pendiente: false,
+  },
 ];
 // Estructura: { id: 1, titulo: 'Nombre real', emisor: 'Institución', fecha: '2026', credencial: 'https://...' }
 export const certificados = [
