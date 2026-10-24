@@ -222,6 +222,19 @@ export const proyectos = [
     imagen: "",
     pendiente: false,
   },
+    {
+    id: "10",
+    titulo: "ECOLIM",
+    categoria: "Aplicación web · Proyecto grupal",
+    subtitulo: "Reciclaje y gestión responsable de residuos",
+    descripcion:
+      "Plataforma educativa sobre reciclaje con un catálogo de materiales, buscador, filtros y consejos de separación. Presenta servicios de recolección, una calculadora de impacto ambiental estimado y un formulario demostrativo para solicitar un recojo.",
+    tecnologias: ["React", "JavaScript", "CSS", "Vite"],
+    demo: "https://web-reciclaje.vercel.app/",
+    codigo: "https://github.com/jeremyylasaca40-a11y/web_reciclaje",
+    imagen: "",
+    pendiente: false,
+  },
 ];
 // Estructura: { id: 1, titulo: 'Nombre real', emisor: 'Institución', fecha: '2026', credencial: 'https://...' }
 export const certificados = [
