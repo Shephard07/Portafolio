@@ -1,4 +1,8 @@
-import { proyectos, perfil } from "../../data/portfolio";
+import {
+  proyectos,
+  perfil,
+  aprendizajesPorProyecto,
+} from "../../data/portfolio";
 import Icon from "../Icon";
 import "./Proyectos.css";
 
@@ -53,6 +57,55 @@ function ProjectArtwork({ index }) {
   );
 }
 
+function ProjectLearning({ project }) {
+  const detalle = aprendizajesPorProyecto[project.id];
+
+  if (!detalle) return null;
+
+  return (
+    <details className="project-learning">
+      <summary>
+        <span>
+          Mi participación y aprendizaje
+          <span className="sr-only"> en {project.titulo}</span>
+        </span>
+
+        <svg
+          className="project-learning-arrow"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </summary>
+
+      <dl className="project-learning-content">
+        <div>
+          <dt>Contexto</dt>
+          <dd>{detalle.contexto}</dd>
+        </div>
+
+        <div>
+          <dt>Mi participación</dt>
+          <dd>{detalle.aporte}</dd>
+        </div>
+
+        <div>
+          <dt>Lo que aprendí</dt>
+          <dd>{detalle.aprendizaje}</dd>
+        </div>
+      </dl>
+    </details>
+  );
+}
+
 export default function Proyectos() {
   return (
     <section
@@ -81,7 +134,8 @@ export default function Proyectos() {
 
       <p className="section-intro">
         Proyectos web, aplicaciones Android y simulaciones con Arduino que
-        forman parte de mi aprendizaje y trabajo en equipo.
+        forman parte de mi aprendizaje. En cada uno comparto el contexto,
+        mi participación y lo que aprendí.
       </p>
 
       <div className="projects-grid">
@@ -101,8 +155,11 @@ export default function Proyectos() {
             <div className="project-body">
               <div className="project-meta">
                 <span>{project.categoria}</span>
+
                 <span>
-                  {project.pendiente ? "Por completar" : project.id}
+                  {project.pendiente
+                    ? "Por completar"
+                    : String(i + 1).padStart(2, "0")}
                 </span>
               </div>
 
@@ -122,10 +179,13 @@ export default function Proyectos() {
                 </div>
               )}
 
+              <ProjectLearning project={project} />
+
               <div className="project-links">
                 {project.apk && (
                   <a href={project.apk} download>
                     Descargar APK
+
                     <svg
                       width="17"
                       height="17"

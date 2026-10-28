@@ -1,4 +1,4 @@
-// Personaliza el contenido aquí. Las URLs vacías no crean enlaces falsos.
+// Datos personales
 export const perfil = {
   nombre: "Bryan Eloy",
   apellidos: "Cotrina Ortiz",
@@ -8,10 +8,12 @@ export const perfil = {
     "Estoy aprendiendo a desarrollar aplicaciones web y a entender cómo funciona el código. Aquí comparto mis proyectos, avances y lo que voy descubriendo en el camino.",
   email: "cotrina.bryaneloyt@gmail.com",
   github: "https://github.com/Shephard07",
-  linkedin: "https://www.linkedin.com/in/bryan-eloy-cotrina-ortiz-786b093a7/",
+  linkedin:
+    "https://www.linkedin.com/in/bryan-eloy-cotrina-ortiz-786b093a7/",
   ubicacion: "Lima, Perú",
 };
-// Formación y experiencia proporcionadas para este portafolio.
+
+// Formación y experiencia
 export const trayectoria = {
   presentacion: [
     "Soy estudiante de Ingeniería de Software con IA en SENATI y actualmente curso el quinto semestre. Estoy aprendiendo desarrollo web y backend, y voy practicando con C#, ASP.NET Core y SQL Server.",
@@ -39,7 +41,7 @@ export const trayectoria = {
   ],
 };
 
-// Tecnologías que estoy practicando, sin asignar niveles de dominio.
+// Tecnologías que estoy practicando
 export const habilidades = [
   {
     id: "web",
@@ -91,8 +93,9 @@ export const habilidades = [
   },
 ];
 
-// Proyectos publicados. Puedes añadir una captura real
-// en public/proyectos y usar imagen: '/proyectos/mi-proyecto.png'.
+// Proyectos
+// Los identificadores se conservan para asociar sus aprendizajes.
+// Las URLs vacías no generan botones.
 export const proyectos = [
   {
     id: "01",
@@ -134,19 +137,6 @@ export const proyectos = [
     pendiente: false,
   },
   {
-    id: "04",
-    titulo: "Restaurante Básico v1",
-    categoria: "Mi primera web",
-    subtitulo: "Mi primera página web",
-    descripcion:
-      "Sitio sencillo de restaurante donde empecé a practicar cómo organizar y presentar un menú en la web.",
-    tecnologias: ["HTML", "CSS", "PHP"],
-    demo: "https://restaurantebasicov1.vercel.app/#contactos",
-    codigo: "",
-    imagen: "",
-    pendiente: false,
-  },
-  {
     id: "05",
     titulo: "ApiCredenciales",
     categoria: "Proyecto académico",
@@ -164,7 +154,7 @@ export const proyectos = [
     imagen: "",
     pendiente: false,
   },
-    {
+  {
     id: "06",
     titulo: "AppTareas",
     categoria: "Aplicación Android",
@@ -222,7 +212,7 @@ export const proyectos = [
     imagen: "",
     pendiente: false,
   },
-    {
+  {
     id: "10",
     titulo: "ECOLIM",
     categoria: "Aplicación web · Proyecto grupal",
@@ -236,7 +226,84 @@ export const proyectos = [
     pendiente: false,
   },
 ];
-// Estructura: { id: 1, titulo: 'Nombre real', emisor: 'Institución', fecha: '2026', credencial: 'https://...' }
+
+// Participación y aprendizaje asociados al identificador de cada proyecto
+export const aprendizajesPorProyecto = {
+  "01": {
+    contexto:
+      "Proyecto de aprendizaje para registrar supervisiones y organizar información de calidad alimentaria.",
+    aporte:
+      "Desarrollé la aplicación siguiendo una guía y las indicaciones de mi monitor de empresa, quien me orientaba sobre su funcionamiento y presentación.",
+    aprendizaje:
+      "Practiqué el desarrollo web con ASP.NET Core, C# y SQL Server, reforzando la conexión entre formularios, lógica e información almacenada.",
+  },
+  "02": {
+    contexto:
+      "Proyecto de aprendizaje para gestionar productos, usuarios y pedidos de un restaurante mediante una API.",
+    aporte:
+      "Desarrollé el proyecto con la guía de mi monitor de empresa, siguiendo sus indicaciones sobre las funciones que debía implementar.",
+    aprendizaje:
+      "Practiqué la creación de endpoints y el manejo de información con ASP.NET Core Web API y SQL Server.",
+  },
+  "03": {
+    contexto:
+      "Proyecto de práctica para crear una interfaz web con controles de reproducción de canciones.",
+    aporte:
+      "Construí el reproductor siguiendo una guía y la orientación de mi monitor de empresa sobre el diseño y comportamiento esperado.",
+    aprendizaje:
+      "Practiqué HTML, CSS y JavaScript para organizar la interfaz y responder a las acciones del usuario sobre el audio.",
+  },
+  "05": {
+    contexto:
+      "Proyecto académico para registrar y consultar información de cuentas, con funciones relacionadas con el envío de correos.",
+    aporte:
+      "Desarrollé la aplicación siguiendo una guía y las indicaciones de mi monitor de empresa sobre su estructura y funcionamiento.",
+    aprendizaje:
+      "Practiqué la organización de una aplicación MVC, el acceso a datos con Entity Framework Core y la integración de funciones de correo.",
+  },
+  "06": {
+    contexto:
+      "Trabajo grupal final del curso de Android para organizar tareas y consultar su avance.",
+    aporte:
+      "Colaboré en parte de la lógica interna de la aplicación, apoyando al equipo en el desarrollo de sus funciones.",
+    aprendizaje:
+      "Reforcé mi aprendizaje sobre la lógica de una aplicación Android y su integración con las pantallas mediante el trabajo en equipo.",
+  },
+  "07": {
+    contexto:
+      "Trabajo grupal final del curso de Android para registrar recolecciones de residuos y consultar estadísticas.",
+    aporte:
+      "Colaboré en parte de la lógica interna de la aplicación, apoyando al equipo en la implementación de sus funciones.",
+    aprendizaje:
+      "Reforcé mi comprensión del manejo de datos en Android y de la relación entre los registros, las consultas y la información presentada al usuario.",
+  },
+  "08": {
+    contexto:
+      "Proyecto grupal de simulación con Arduino para controlar una barrera, la iluminación y las alertas de temperatura.",
+    aporte:
+      "Elaboré la documentación de lo realizado y participé en las pruebas de funcionamiento de la simulación.",
+    aprendizaje:
+      "Practiqué la documentación técnica y la comprobación de la respuesta de sensores y actuadores ante distintas condiciones.",
+  },
+  "09": {
+    contexto:
+      "Proyecto grupal de simulación para monitorear la temperatura de una sala de servidores y representar alertas y ventilación.",
+    aporte:
+      "Elaboré la documentación del proyecto y participé en las pruebas de los diferentes estados del sistema.",
+    aprendizaje:
+      "Reforcé mi comprensión de las condiciones de temperatura, las señales de alerta y la importancia de comprobar y documentar el funcionamiento.",
+  },
+  "10": {
+    contexto:
+      "Proyecto grupal de una web educativa sobre reciclaje y servicios de recolección de residuos.",
+    aporte:
+      "Desarrollé la sección del catálogo de residuos, incluyendo su interfaz, organización de datos, tarjetas, buscador y filtros.",
+    aprendizaje:
+      "Practiqué componentes reutilizables, manejo de estados y filtrado de información en React, integrando mi sección con el trabajo del equipo.",
+  },
+};
+
+// Certificados
 export const certificados = [
   {
     id: 1,
@@ -286,7 +353,7 @@ export const certificados = [
     fechaISO: "2024-06-23",
     credencial: "/certificados/introduccion-ciberseguridad.pdf",
   },
-    {
+  {
     id: 7,
     titulo: "Java Fundamentals – Español",
     emisor: "Oracle Academy",
